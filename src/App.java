@@ -25,6 +25,7 @@ public class App {
         // exibir e manipular os dados na aplicação;
 
         //fazer uma conexão HTTP e buscar os top 250 filmes
+        
         String urlApi = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
         URI address = URI.create(urlApi);
         HttpClient client= HttpClient.newHttpClient();       
@@ -44,7 +45,7 @@ public class App {
             System.out.println("\u001b[1mImagem:\u001b[m " + movie.get("image"));
             System.out.println("\u001b[1mBanner URL:\u001b[m " + movie.get("image"));
             System.out.println("\u001b[1mClassificação:\u001b[m " + movie.get("imDbRating"));
-            
+
             double rating = Double.parseDouble(movie.get("imDbRating"));
             int starNumber = (int) rating;
             for(int n = 1; n <= starNumber; n++){
